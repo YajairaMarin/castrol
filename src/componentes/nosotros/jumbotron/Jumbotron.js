@@ -1,9 +1,7 @@
 
-import React from 'react';
 
-class Jumbotron extends React.Component {
 
-  render() {
+  function Jumbotron() {
 
     return (
 
@@ -23,6 +21,6 @@ class Jumbotron extends React.Component {
     
   }
 
-}
+
 
 export default Jumbotron;

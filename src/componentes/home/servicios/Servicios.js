@@ -1,10 +1,7 @@
 
-import React from 'react';
-//import './Slider.css';
 
-class Servicios extends React.Component {
 
-  render() {
+  function Servicios() {
 
     return (
 
@@ -53,6 +50,6 @@ class Servicios extends React.Component {
     
   }
 
-}
+
 
 export default Servicios;

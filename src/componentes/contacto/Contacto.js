@@ -7,9 +7,8 @@ import Formulario from './formulario/Formulario';
 import Footer from '../footer/Footer';
 
 
-class Contacto extends React.Component {
-
-	render() {
+function Contacto() {
+	
 
 		return(
 
@@ -44,6 +43,6 @@ class Contacto extends React.Component {
 
 	}
 
-}
+
 
 export default Contacto;

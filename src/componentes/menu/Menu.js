@@ -1,9 +1,6 @@
 
-import React from 'react';
 
-class Menu extends React.Component {
-
-  render() {
+function Menu() {
 
   	return (
 
@@ -40,6 +37,5 @@ class Menu extends React.Component {
     
   }
 
-}
 
 export default Menu;

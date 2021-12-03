@@ -1,10 +1,7 @@
 
-import React from 'react';
-//import './Slider.css';
 
-class Slider extends React.Component {
 
-  render() {
+  function Slider() {
 
   	return (
 
@@ -48,6 +45,6 @@ class Slider extends React.Component {
     
   }
 
-}
+
 
 export default Slider;

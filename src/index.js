@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import App2 from './App2';
+import Home from '../src/componentes/home/Home';
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'; // Archivo CSS de Bootstrap 4 
@@ -12,7 +13,7 @@ ReactDOM.render(
     <Router>
       <Routes>
         <Route exact path="/" element={<App/>} />
-        <Route path="/index" element={<App2/>} />
+        <Route path="/home" element={<Home/>} />
       </Routes>
     </Router>
 

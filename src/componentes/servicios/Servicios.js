@@ -6,9 +6,8 @@ import Menu from '../menu/Menu';
 import Footer from '../footer/Footer';
 
 
-class Servicios extends React.Component {
 
-	render() {
+	function Servicios() {
 
 		return(
 
@@ -182,6 +181,6 @@ class Servicios extends React.Component {
 
 	}
 
-}
+
 
 export default Servicios;

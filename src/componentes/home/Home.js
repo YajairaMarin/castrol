@@ -7,9 +7,9 @@ import Servicios from './servicios/Servicios';
 import Footer from '../footer/Footer'; // Componente Footer (Lo he creado en la Parte 1 de este Tutorial) 
 
 
-class Home extends React.Component {
 
-	render() {
+
+	function Home() {
 
 		return(
 
@@ -38,6 +38,6 @@ class Home extends React.Component {
 
 	}
 
-}
+
 
 export default Home;

@@ -1,5 +1,4 @@
 import logo from './logo.svg';
-import './App.css';
 import { Link} from "react-router-dom";
 
 function App() {
@@ -14,7 +13,7 @@ function App() {
 
             {/* <!-- Sidebar - Brand --> */}
 
-            <Link to="/index" className="sidebar-brand d-flex align-items-center justify-content-center">
+            <Link to="/home" className="sidebar-brand d-flex align-items-center justify-content-center">
                 <div className="sidebar-brand-icon rotate-n-15">
                     <i className="fas fa-laugh-wink"></i>
                 </div>

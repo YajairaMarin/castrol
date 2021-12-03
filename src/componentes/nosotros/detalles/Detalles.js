@@ -1,9 +1,6 @@
 
-import React from 'react';
 
-class Detalles extends React.Component {
-
-  render() {
+  function Detalles() {
 
     return (
 
@@ -34,6 +31,6 @@ class Detalles extends React.Component {
     
   }
 
-}
+
 
 export default Detalles;

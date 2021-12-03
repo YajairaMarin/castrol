@@ -1,5 +1,4 @@
 
-import React from 'react';
 
 import Menu from '../menu/Menu';
 import Jumbotron from './jumbotron/Jumbotron'; // Este Componente lo crearé a continuación 
@@ -7,9 +6,8 @@ import Detalles from './detalles/Detalles'; // Este Componente lo crearé a cont
 import Footer from '../footer/Footer';
 
 
-class Nosotros extends React.Component {
 
-	render() {
+	function Nosotros() {
 
 		return(
 
@@ -32,6 +30,6 @@ class Nosotros extends React.Component {
 
 	}
 
-}
+
 
 export default Nosotros;

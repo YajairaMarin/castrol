@@ -1,10 +1,5 @@
 
-import React from 'react';
-import '../../../App.css';
-
-class Formulario extends React.Component {
-
-  render() {
+function Formulario() {
 
     return (
 
@@ -38,6 +33,6 @@ class Formulario extends React.Component {
     
   }
 
-}
+
 
 export default Formulario;
