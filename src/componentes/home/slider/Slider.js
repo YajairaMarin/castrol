@@ -13,22 +13,16 @@
 		    </ol>
 		    <div className="carousel-inner">
 		        <div className="carousel-item active">
-		            <img className="img-fluid" src="https://blog.nubecolectiva.com/wp-content/uploads/2019/10/img_destacada_blog_devs-5-930x360.png" />
-		            <div className="elementos">
-		                <a className="btn btn-lg btn-primary" href="https://blog.nubecolectiva.com/proteccion-de-rutas-o-vistas-mediante-contrasena-en-laravel-6-2/" target="_blank" role="button">Leer más</a>
-		            </div>
+		            <img className="img-fluid" src="https://movidatuy.com/wp-content/uploads/2020/06/para-llenar-un-tanque-de-gasolina-se-necesitaran-entre-20-y-35-en-Venezuela-.jpg" />
+		            
 		        </div>
 		        <div className="carousel-item">
-		            <img className="img-fluid" src="https://blog.nubecolectiva.com/wp-content/uploads/2019/08/edit_img_destacada_blog_devs-930x360.png" />
-		            <div className="elementos">
-		                <a className="btn btn-lg btn-primary" href="https://blog.nubecolectiva.com/5-tips-para-mejorar-la-ux-experiencia-del-usuario-de-un-menu-web-creado-con-bootstrap-4" target="_blank" role="button">Leer más</a>
-		            </div>
+		            <img className="img-fluid" src="https://www.lubricantesenvenezuela.com/wp-content/uploads/2020/01/fallas.jpg" />
+		            
 		        </div>
 		        <div className="carousel-item">
-		            <img className="img-fluid" src="https://blog.nubecolectiva.com/wp-content/uploads/2019/10/edit_img_destacada_blog_devs-3-930x360.png" />
-		            <div className="elementos">
-		                <a className="btn btn-lg btn-primary" href="https://blog.nubecolectiva.com/como-crear-animaciones-en-android-trasladar-elemento-en-eje-x-y-java/" target="_blank" role="button">Leer más</a>
-		            </div>
+		            <img className="img-fluid" src="https://media.gossipvehiculo.com/wp-content/uploads/2021/06/17102747/13-14.jpg" />
+		            
 		        </div>
 		    </div>
 		    <a className="carousel-control-prev" href="#slider" role="button" data-slide="prev">
@@ -40,7 +34,7 @@
 		        <span className="sr-only">Next</span>
 		    </a>
 		</div>
-
+	
   	)
     
   }

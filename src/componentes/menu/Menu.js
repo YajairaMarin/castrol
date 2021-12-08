@@ -1,34 +1,42 @@
 
+import { Link} from "react-router-dom";
 
 function Menu() {
 
   	return (
 
-  		<nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  		<nav className="navbar navbar-default navbar-expand-md navbar-dark fixed-top bgDefault" >
 
-		    <a className="navbar-brand" href="#">Mi Proyecto</a>
-		    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-		     	<span className="navbar-toggler-icon"></span>
-		    </button>
+		    
+		    
 		    <div className="collapse navbar-collapse" id="navbarCollapse">
-			    <ul className="navbar-nav mr-auto">
-			        <li className="nav-item active">
-			          	<a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+				
+				<ul className="navbar-nav mr-auto">
+					<li>
+			          	<img src='./logo.png' width='50' />
 			        </li>
+
 			        <li className="nav-item">
-			          	<a className="nav-link" href="#">Nosotros</a>
+			          	<p className="frase">ES MÁS QUE SÓLO GASOLINA, ES INGENIERÍA LÍQUIDA</p>
 			        </li>
-			        <li className="nav-item">
-			          	<a className="nav-link" href="#">Servicios</a>
+				</ul>
+			    <ul className="navbar-nav ml-auto">
+			        <li className="nav-item ">
+			          	<Link to="/"className="nav-link">HOME <span className="sr-only">(current)</span></Link>
 			        </li>
-			        <li className="nav-item">
-			          	<a className="nav-link" href="#">Contacto</a>
+					<li className="nav-item ">
+			          	<Link className="nav-link" to="/Login">INGRESAR</Link>
+			        </li>
+					<li className="nav-item ">
+			          	<Link className="nav-link" to="/Registrar">REGÍSTRATE</Link>
+			        </li>
+			        <li className="nav-item ">
+			          	<Link className="nav-link" to="/Nosotros">ACERCA DE NOSOTROS</Link>
+			        </li>
+			        <li className="nav-item ">
+			          	<Link className="nav-link" to="/Contacto">CONTÁCTANOS</Link>
 			        </li>
 			    </ul>
-			    <form className="form-inline mt-2 mt-md-0">
-			        <input className="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Buscar"/>
-			        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-			    </form>
 		    </div>
 
 		</nav>
