@@ -1,19 +1,15 @@
-
-import React from 'react';
 import { Link} from "react-router-dom";
-import Menu from '../menu/Menu';
-import Footer from '../footer/Footer';
+import Menu from '../menu/Menu'; 
+import Footer from '../footer/Footer'; 
+ 
 
+  function Recuperar() {       
+        return (
+            <>
 
-function Contacto() {
-	
-
-		return(
-
-			<>
-
-			<Menu />
-			<div className="container">
+            <Menu />
+            
+            <div className="container">
         <div className="row justify-content-center">
 
             <div className="col-xl-10 col-lg-10 col-md-9">
@@ -22,11 +18,13 @@ function Contacto() {
                     <div className="card-body p-0">
                         {/* <!-- Nested Row within Card Body --> */}
                         <div className="row">
-                            <div className="col-lg-6 d-none d-lg-block bg-contact-image"></div>
+                            <div className="col-lg-6 d-none d-lg-block bg-password-image"></div>
                             <div className="col-lg-6">
                                 <div className="p-5">
                                     <div className="text-center">
-                                        <h1 className="h4 text-gray-900 mb-2">¡Contáctanos!</h1>
+                                        <h1 className="h4 text-gray-900 mb-2">¿Olvidaste tu contraseña?</h1>
+                                        <p className="mb-4">Oops… No olvides siempre guardar tus contraseñas en un lugar seguro. 
+                                        Completa los campos que se muestran a continuación para que puedas cambiar tu contraseña.</p>
                                     </div>
                                     <form className="user">
                                     <div className="form-group row">
@@ -44,20 +42,27 @@ function Contacto() {
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
                                                 placeholder="Escribe tu correo" />
                                         </div>
-										<div className="form-group">
-										<input type="text" className="form-control form-control-user" id="exampleFirstName"
-                                                    placeholder="Asunto" />
+                                        <div className="form-group row">
+                                            <div className="col-sm-6 mb-3 mb-sm-0">
+                                                <input type="password" className="form-control form-control-user"
+                                                    id="exampleInputPassword" placeholder="Contraseña" />
+                                            </div>
+                                            <div className="col-sm-6">
+                                                <input type="password" className="form-control form-control-user"
+                                                    id="exampleRepeatPassword" placeholder="Confirmar contraseña" />
+                                            </div>
                                         </div>
-                                        <div className="form-group">
-										<textarea className="form-control " 
-											id="mensaje" placeholder="Digite su petición" required></textarea>
-
-                                        </div>
-                                        
-                                        <Link to="/" className="btn btn-primary btn-user btn-block">
-                                            Enviar
+                                        <Link to="/Login" className="btn btn-primary btn-user btn-block">
+                                            Cambiar contraseña
                                         </Link>
                                     </form>
+                                    
+                                    <div className="text-center">
+                                        <Link className="small" to="/Registrar"> ¡Crea tu cuenta!</Link>
+                                    </div>
+                                    <div className="text-center">
+                                        <Link className="small" to="/Login">¿Ya tienes una cuenta? ¡Ingresa!</Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -69,16 +74,13 @@ function Contacto() {
         </div>
 
     </div>
-			
-
-	  		<Footer />
-
-	  		</>
-
-		)
-
-	}
 
 
+        
+    <Footer />
+    </>
 
-export default Contacto;
+    );
+  }
+
+  export default Recuperar;

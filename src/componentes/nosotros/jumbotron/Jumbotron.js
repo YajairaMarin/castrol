@@ -7,13 +7,15 @@
 
         <div className="jumbotron">
             <div className="container">
+            <div className="text-CENTER">
                 <h1 className="display-3">Nosotros </h1>
+                <br/>
+             
                 <p>
-                    Somos una comunidad en donde fomentamos el conocimiento colectivo.
-                    <br/>
-                    Solo de esta manera se formarán profesionales que cambien sus vidas y tengan un mejor futuro.
+                COMBUSTIBLES DE CALIDAD PARA TUS VEHÍCULOS  
+                    
                 </p>
-                <p><a className="btn btn-primary btn-lg" href="https://nubecolectiva.com" target="_blank" role="button">Visitar Web</a></p>
+              </div>   
             </div>
         </div>
 

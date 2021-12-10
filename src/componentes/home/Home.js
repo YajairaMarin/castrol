@@ -15,13 +15,12 @@ import Footer from '../footer/Footer';
 			<>
 
 			<Menu /> 
-
-			<main role="main" className="flex-shrink-0 mt-5">
+			
+			<main role="main" className="flex-shrink-0 my-6">
 
 		            <div className="container">
 		  	  		
 		  	        <Slider /> 
-		  	        <hr className="featurette-divider" />
 
 		            </div>
 
