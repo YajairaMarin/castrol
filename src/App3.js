@@ -3,7 +3,7 @@ import { Link} from "react-router-dom";
 import Registrarvehiculo from './componentes/externo/Registrarvehiculo';
 
 
-function App() {
+function App3() {
   return (
     <>
     
@@ -20,27 +20,27 @@ function App() {
             <li className="nav-item">
                 <p className="nav-link">
                     <span>Registra tu vehículo</span>
-                    <Link className="carousel-control-next" to="/App3" role="button" data-slide="next">
+                    <a className="carousel-control-next" href="#slider" role="button" data-slide="next">
 		            <span className="carousel-control-next-icon"></span>
-		        </Link>
+		        </a>
                 </p>
                 
             </li>
             <li className="nav-item">
-                <Link className="nav-link collapsed" to="/App"  data-target="#collapseUtilities"
+                <a className="nav-link collapsed" href="#"  data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i className="fas fa-fw fa-wrench"></i>
                     <span>Vehículos a tu nombre</span>
-                </Link>
+                </a>
 
             </li>
 
             <li className="nav-item">
-                <Link className="nav-link collapsed" to="/App3" data-toggle="collapse" data-target="#collapsePages"
+                <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i className="fas fa-fw fa-folder"></i>
                     <span>Conoce tu saldo</span>
-                </Link>
+                </a>
             </li>
 
             <li className="nav-item">
@@ -127,12 +127,10 @@ function App() {
     <div className="col-lg-8 mb-4">
         <div className="card shadow-lg my-6">
             <div className="card-header py-3">
-                <h6 className="m-2 font-weight-bold text-primary text-center">Development Approach</h6>
+                <h6 className="m-2 font-weight-bold text-primary text-center">Probando</h6>
             </div>
             <div className="card-body">
-                <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce
-                    CSS bloat and poor page performance. Custom CSS classes are used to create
-                    custom components and custom utility classes.</p>
+                <p>Prueba.</p>
                 <p className="mb-0">Before working with this theme, you should become familiar with the
                     Bootstrap framework, especially the utility classes.</p>
             </div>
@@ -152,4 +150,4 @@ function App() {
   );
 }
 
-export default App;
+export default App3;
