@@ -50,9 +50,9 @@ import Footer from '../footer/Footer';
                                                         id="exampleRepeatPassword" placeholder="Confirmar contraseña" />
                                                 </div>
                                             </div>
-                                            <a href="login.html" className="btn btn-primary btn-user btn-block">
+                                            <Link to="/Login" className="btn btn-primary btn-user btn-block">
                                                 Registrarse
-                                            </a>
+                                            </Link>
                                         </form>
                                     
                                         <div className="text-center">

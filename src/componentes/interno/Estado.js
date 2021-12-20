@@ -2,7 +2,7 @@ import { Link} from "react-router-dom";
 
 
 
-function App2() {
+function Estado() {
   return (
     <>
     
@@ -12,13 +12,14 @@ function App2() {
 
             <li className="nav-item active">
                 <p className="nav-link" >
+                    
                     <span>MENÚ</span></p>
             </li>
             <hr className="sidebar-divider" />
             <li className="nav-item">
                 <p className="nav-link">
                     <span>Gestionar precios</span>
-                    <Link className="carousel-control-next2" to="/Gestionar" role="button" data-slide="next">
+                    <Link className="carousel-control-next2" to="/Registrarvehiculo" role="button" data-slide="next">
 		            <span className="carousel-control-next-icon"></span>
 		        </Link>
                 </p>
@@ -27,7 +28,7 @@ function App2() {
             <li className="nav-item">
                 <p className="nav-link">
                 <span>Disponibilidad de gasolina</span>
-                <Link className="carousel-control-next2" to="/Disponibilidad" role="button" data-slide="next">   
+                <Link className="carousel-control-next2" to="/Vehiculosregistrados" role="button" data-slide="next">   
                     <span className="carousel-control-next-icon"></span>
                 </Link>
                 </p>
@@ -36,7 +37,7 @@ function App2() {
             <li className="nav-item">
                 <p className="nav-link">
                 <span>Tanquear vehículo cliente</span>
-                <Link className="carousel-control-next2" to="/Tanquear2" role="button" data-slide="next">
+                <Link className="carousel-control-next2" to="/Saldo" role="button" data-slide="next">
                 <span className="carousel-control-next-icon"></span>   
                     
                 </Link>
@@ -46,7 +47,7 @@ function App2() {
             <li className="nav-item">
                 <p className="nav-link">
                 <span>Estado de clientes</span>
-                <Link className="carousel-control-next2" to="/Estado" role="button" data-slide="next">
+                <Link className="carousel-control-next2" to="/Recargar" role="button" data-slide="next">
                 <span className="carousel-control-next-icon"></span>  
                     
                 </Link>
@@ -97,4 +98,4 @@ function App2() {
   );
 }
 
-export default App2;
+export default Estado;

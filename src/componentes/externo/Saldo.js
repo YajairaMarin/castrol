@@ -2,12 +2,11 @@
 import { Link} from "react-router-dom";
 
 
-
-function App() {
-  return (
-    <>
-    
-    <div id="wrapper">
+function Saldo() {       
+    return (
+        <>
+        
+        <div id="wrapper">
 
         <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -15,9 +14,6 @@ function App() {
                 <p className="nav-link" >
                     
                     <span>MENÚ</span></p>
-                
-
-                <p className="nav-link">Puntos  acumulados 120</p>
             </li>
             <hr className="sidebar-divider" />
             <li className="nav-item">
@@ -134,16 +130,33 @@ function App() {
 
                     </ul>
                 </nav>
-
+    
+                    <div className="container">
+    
+                        <div className="row justify-content-center">
+                            <div className="col-lg-8 mb-4">
+                                <div className="card shadow-lg my-6">
+                                    <div className="card-header py-3">
+                                        <h6 className="m-2 font-weight-bold text-primary text-center">TU SALDO</h6>
+                                    </div>
+                                    <div className="card-body">
+                                        <p>Estimad@ Nombres y Apellidos del Usuario Externo
+                                        </p> <br />
+                                        <p className="mb-0">Tu saldo a la fecha es: $ 1236789.</p>
+                                    </div>
+                                </div>
+                             </div>
+                         </div>
+                    </div>
+    
+                </div>
             </div>
+            
         </div>
         
-    </div>
+        </>
     
-    </>
-
-
-  );
+    
+      );
 }
-
-export default App;
+export default Saldo;

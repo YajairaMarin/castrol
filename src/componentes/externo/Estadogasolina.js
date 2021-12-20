@@ -1,13 +1,14 @@
 
+
 import { Link} from "react-router-dom";
+import React from 'react';
 
 
-
-function App() {
-  return (
-    <>
-    
-    <div id="wrapper">
+function Estadogasolina() {       
+    return (
+        <>
+        
+        <div id="wrapper">
 
         <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -15,9 +16,6 @@ function App() {
                 <p className="nav-link" >
                     
                     <span>MENÚ</span></p>
-                
-
-                <p className="nav-link">Puntos  acumulados 120</p>
             </li>
             <hr className="sidebar-divider" />
             <li className="nav-item">
@@ -134,16 +132,50 @@ function App() {
 
                     </ul>
                 </nav>
-
+    
+                    <div className="container">
+    
+                    <div className="row justify-content-center">
+                        <div className="col-lg-8 mb-4">
+                            <div className="card shadow-lg my-6">
+                                <div className="card-header py-3">
+                                    <h6 className="m-2 font-weight-bold text-primary text-center">ESTADO DE LA GASOLINA</h6>
+                                </div>
+                                <div className="card-body">
+                                    <table className="table table-bordered table-sm">
+                                        <thead>
+                                            <tr>
+                                                <th>Rango de fecha</th>
+                                                <th>Tipo de gasolina</th>
+                                                <th>Precio por galón</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>1</td>
+                                                <td>1</td>
+                                                
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                </div>
             </div>
+            
         </div>
         
-    </div>
+        </>
     
-    </>
-
-
-  );
+    
+      );
 }
-
-export default App;
+export default Estadogasolina;

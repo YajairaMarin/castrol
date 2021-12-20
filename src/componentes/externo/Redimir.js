@@ -1,13 +1,11 @@
-
 import { Link} from "react-router-dom";
 
 
-
-function App() {
-  return (
-    <>
-    
-    <div id="wrapper">
+function Redimir() {       
+    return (
+        <>
+        
+        <div id="wrapper">
 
         <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -15,9 +13,6 @@ function App() {
                 <p className="nav-link" >
                     
                     <span>MENÚ</span></p>
-                
-
-                <p className="nav-link">Puntos  acumulados 120</p>
             </li>
             <hr className="sidebar-divider" />
             <li className="nav-item">
@@ -134,16 +129,80 @@ function App() {
 
                     </ul>
                 </nav>
+    
+                    <div className="container">
+    
+    <div className="row justify-content-center">
+        <div className="col-lg-8 mb-4">
+            <div className="card shadow-lg my-6">
+                <div className="card-header py-3">
+                    <h6 className="m-2 font-weight-bold text-primary text-center">REDIME TUS PUNTOS</h6>
+                </div>
+                <div className="card-body">
+                                
+                                    <div className="p-5">
+                                        <form className="user">
+                                            <div className="form-group row">
+                                                <div className="col-sm-6 mb-3 mb-sm-0">
+                                                    <input type="text" className="form-control form-control-user" id="exampleFirstName"
+                                                        placeholder="Placa" />
+                                                </div>
+                                                
+                                            </div>
 
+                                            <div className="form-group row">
+                                                <div className="col-sm-6 mb-3 mb-sm-0">
+                                                <select class="form-select form-control-user2" aria-label="Default select example" >
+                                                <option value="1">Corriente</option>
+                                                <option value="2">Extra</option>
+                                                </select>
+                                                   
+                                                </div>
+                                                
+                                            </div>
+
+                                            <div className="form-group row">
+                                                <div className="col-sm-6 mb-3 mb-sm-0">
+                                                    <input type="text" className="form-control form-control-user" id="exampleFirstName"
+                                                        placeholder="Galones" />
+                                                </div>
+                                                
+                                            </div>
+
+                                            <div className="form-group row">
+                                                <div className="col-sm-6 mb-3 mb-sm-0">
+                                                    <input type="text" className="form-control form-control-user" id="exampleFirstName"
+                                                        placeholder="Total puntos a descontar" />
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                        
+                                            <Link to="/Login" className="btn btn-primary btn-user btn-block">
+                                                Redimir
+                                            </Link>
+                                        </form>
+                                    
+                                    </div>
+                               
+                    
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                 </div>
+    
+                </div>
             </div>
+            
         </div>
         
-    </div>
+        </>
     
-    </>
-
-
-  );
+    
+      );
 }
-
-export default App;
+export default Redimir;
