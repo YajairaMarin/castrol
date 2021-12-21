@@ -2,16 +2,33 @@ import { Link } from "react-router-dom";
 import Menu from "../menu/Menu";
 import Footer from "../footer/Footer";
 import Axios from "axios";
+import { useState } from "react";
 
 function Registrar() {
+	const [nameUser, setnameUser] = useState("");
+	const [lastnameUser, setlastnameUser] = useState("");
+	const [emailUser, setemailUser] = useState("");
+	const [email2User, setemail2User] = useState("");
+	const emailcomprobar;
+	const [passwordUser, setpasswordUser] = useState("");
+	const [password2User, setpassword2User] = useState("");
+
+	const comprobar = (a,b)=>{
+		let soniguales
+		if (a===b) {
+			soniguales=true;
+		}
+		else {
+			soniguales=false;
+		}
+	}
 	const registrarse = () => {
-		Axios.post("localhost:8080/auth/register", {
-			name: "Robert",
-			lastname: "ramirez",
-			age: 25,
-			email: "robert@hotmail.com",
-			password: "america",
-			birthDay: "1996-05-29",
+		Axios.post("http://localhost:8080/auth/register", {
+			name: nameUser,
+			lastname: lastnameUser,
+			email: emailUser,
+			password: passwordUser,
+			
 		});
 	};
 	return (
@@ -40,6 +57,9 @@ function Registrar() {
 															className="form-control form-control-user"
 															id="exampleFirstName"
 															placeholder="Nombre"
+															onChange={(e) => {
+																setnameUser(e.target.value);
+															}}
 														/>
 													</div>
 													<div className="col-sm-6">
@@ -48,6 +68,9 @@ function Registrar() {
 															className="form-control form-control-user"
 															id="exampleLastName"
 															placeholder="Apellido"
+															onChange={(e) => {
+																setlastnameUser(e.target.value);
+															}}
 														/>
 													</div>
 												</div>
@@ -57,6 +80,9 @@ function Registrar() {
 														className="form-control form-control-user"
 														id="exampleInputEmail"
 														placeholder="Correo"
+														onChange={(e) => {
+															setemailUser(e.target.value);
+														}}
 													/>
 												</div>
 												<div className="form-group">
@@ -65,6 +91,9 @@ function Registrar() {
 														className="form-control form-control-user"
 														id="exampleInputEmail"
 														placeholder="Confirmar correo"
+														onChange={(e) => {
+															setemail2User(e.target.value);
+														}}
 													/>
 												</div>
 												<div className="form-group row">
@@ -74,6 +103,10 @@ function Registrar() {
 															className="form-control form-control-user"
 															id="exampleInputPassword"
 															placeholder="Contraseña"
+															onChange={(e) => {
+																setpasswordUser(e.target.value);
+															}}
+
 														/>
 													</div>
 													<div className="col-sm-6">
@@ -82,11 +115,14 @@ function Registrar() {
 															className="form-control form-control-user"
 															id="exampleRepeatPassword"
 															placeholder="Confirmar contraseña"
+															onChange={(e) => {
+																setpassword2User(e.target.value);
+															}}
 														/>
 													</div>
 												</div>
 												<button
-													onClick={registrarse}
+													onClick={()=>{registrarse()}}
 													className="btn btn-primary btn-user btn-block"
 												>
 													Registrarse

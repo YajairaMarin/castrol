@@ -6,11 +6,12 @@ import { useState } from "react";
 
 function Login() {
 	const [emailUser, setEmailUser] = useState("");
+	const [passwordUser,setpasswordUser] = useState("");
 
 	const loguearse = () => {
 		Axios.post("localhost:8080/auth/login", {
 			email: emailUser,
-			password: "monijkjkca",
+			password: passwordUser,
 		});
 	};
 
@@ -52,6 +53,9 @@ function Login() {
 														className="form-control form-control-user"
 														id="exampleInputPassword"
 														placeholder="Contraseña"
+														onChange={(e) => {
+															setpasswordUser(e.target.value);
+														}}
 													/>
 												</div>
 												<div className="form-group">

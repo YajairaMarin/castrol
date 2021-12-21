@@ -13,7 +13,7 @@ function Menu() {
 				
 				<ul className="navbar-nav mr-auto">
 					<li>
-			          	<img src='./logo.png' width='50' />
+			          	<img src='./logo.png' width='20' />
 			        </li>
 
 			        <li className="nav-item">
