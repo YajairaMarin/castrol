@@ -1,7 +1,12 @@
 
 import { Link} from "react-router-dom";
+import Axios from "axios";
+import { useState } from "react";
 
-function Registrarvehiculo() {       
+function Registrarvehiculo() {    
+    const [tipoUser, settipoUser] = useState("");   
+    const [placaUser, setplacaUser] = useState(""); 
+    const [placa2User, setplaca2User] = useState(""); 
     return (
         <>
         
@@ -143,14 +148,21 @@ function Registrarvehiculo() {
                                     <div className="form-group row">
                                             <div className="col-sm-6 mb-3 mb-sm-0">
                                                 <input type="text" className="form-control form-control-user" id="exampleFirstName"
-                                                    placeholder="Tipo de vehículo" />
+                                                    placeholder="Tipo de vehículo" 
+                                                    onChange={(e) => {
+                                                        settipoUser(e.target.value);
+                                                    }}/>
                                             </div>
 
                                         </div>
                                         <div className="form-group row">
                                             <div className="col-sm-6 mb-3 mb-sm-0">
                                                 <input type="text" className="form-control form-control-user" id="exampleFirstName"
-                                                    placeholder="Placa" />
+                                                    placeholder="Placa" 
+                                                    onChange={(e) => {
+                                                        setplacaUser(e.target.value);
+                                                    }}
+                                                    />
                                             </div>
 
                                         </div>

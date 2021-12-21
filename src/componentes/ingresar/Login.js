@@ -5,13 +5,24 @@ import Axios from "axios";
 import { useState } from "react";
 
 function Login() {
-	const [emailUser, setEmailUser] = useState("");
+	const [user, setUser] = useState("");
+	const [pass, setPass] = useState("");
 
 	const loguearse = () => {
-		Axios.post("localhost:8080/auth/login", {
-			email: emailUser,
-			password: "monijkjkca",
-		});
+		let codeRes;
+		alert("ESTOY DENTRO DE LA FUNCION");
+
+		Axios.post("http://localhost:8080/auth/login", {
+			email: user,
+			password: pass,
+		})
+			.then((res) => {
+				alert("ESTE ES LA RESPUESTA", res.ok);
+				// codeRes = res.code;
+			})
+			.catch((e) => alert("ESTE ES EL ERROR::  ", e));
+
+		return codeRes;
 	};
 
 	return (
@@ -35,23 +46,26 @@ function Login() {
 											<form className="user">
 												<div className="form-group">
 													<input
+														onChange={(e) => {
+															setUser(e.target.value);
+														}}
 														type="email"
 														className="form-control form-control-user"
 														id="exampleInputEmail"
 														aria-describedby="emailHelp"
 														placeholder="Ingrese su correo"
-														onChange={(e) => {
-															setEmailUser(e.target.value);
-														}}
 													/>
 												</div>
-												<h1>{emailUser}</h1>
+
 												<div className="form-group">
 													<input
 														type="password"
 														className="form-control form-control-user"
 														id="exampleInputPassword"
 														placeholder="Contraseña"
+														onChange={(e) => {
+															setPass(e.target.value);
+														}}
 													/>
 												</div>
 												<div className="form-group">
@@ -61,20 +75,20 @@ function Login() {
 															className="custom-control-input"
 															id="customCheck"
 														/>
-														<label
-															className="custom-control-label"
-															for="customCheck"
-														>
-															Recuérdame
-														</label>
 													</div>
 												</div>
-												<Link
-													to="/App1"
+
+												<button
+													onClick={() => {
+														let codigo = loguearse();
+														if (codigo === 200) {
+														} else {
+														}
+													}}
 													className="btn btn-primary btn-user btn-block"
 												>
 													Ingresar
-												</Link>
+												</button>
 											</form>
 
 											<div className="text-center">

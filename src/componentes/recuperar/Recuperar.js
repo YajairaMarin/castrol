@@ -1,9 +1,27 @@
 import { Link} from "react-router-dom";
 import Menu from '../menu/Menu'; 
 import Footer from '../footer/Footer'; 
+import Axios from "axios";
+import { useState } from "react";
  
 
-  function Recuperar() {       
+  function Recuperar() {  
+    const [nameUser, setnameUser] = useState("");
+	const [lastnameUser, setlastnameUser] = useState("");
+	const [emailUser, setemailUser] = useState("");
+	const [passwordUser, setpasswordUser] = useState(""); 
+
+    const recupera = () => {
+		Axios.post("localhost:8080/auth/recuperar", {
+			name: "Robert",
+			lastname: "ramirez",
+			age: 25,
+			email: "robert@hotmail.com",
+			password: "america",
+			birthDay: "1996-05-29",
+		});
+	};
+    
         return (
             <>
 
@@ -30,31 +48,50 @@ import Footer from '../footer/Footer';
                                     <div className="form-group row">
                                             <div className="col-sm-6 mb-3 mb-sm-0">
                                                 <input type="text" className="form-control form-control-user" id="exampleFirstName"
-                                                    placeholder="Nombre" />
+                                                    placeholder="Nombre" 
+                                                    onChange={(e) => {
+                                                        setnameUser(e.target.value);
+                                                    }}
+                                                    />
                                             </div>
                                             <div className="col-sm-6">
                                                 <input type="text" className="form-control form-control-user" id="exampleLastName"
-                                                    placeholder="Apellido" />
+                                                    placeholder="Apellido" 
+                                                    onChange={(e) => {
+                                                        setlastnameUser(e.target.value);
+                                                    }}/>
                                             </div>
                                         </div>
                                         <div className="form-group">
                                             <input type="email" className="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Escribe tu correo" />
+                                                placeholder="Escribe tu correo" 
+                                                onChange={(e) => {
+                                                    setemailUser(e.target.value);
+                                                }}
+                                                />
                                         </div>
                                         <div className="form-group row">
                                             <div className="col-sm-6 mb-3 mb-sm-0">
                                                 <input type="password" className="form-control form-control-user"
-                                                    id="exampleInputPassword" placeholder="Contraseña" />
+                                                    id="exampleInputPassword" placeholder="Contraseña" 
+                                                    onChange={(e) => {
+                                                        setpasswordUser(e.target.value);
+                                                    }}
+                                                    />
                                             </div>
                                             <div className="col-sm-6">
                                                 <input type="password" className="form-control form-control-user"
-                                                    id="exampleRepeatPassword" placeholder="Confirmar contraseña" />
+                                                    id="exampleRepeatPassword" placeholder="Confirmar contraseña" 
+                                                    onChange={(e) => {
+                                                        setpasswordUser(e.target.value);
+                                                    }}
+                                                    />
                                             </div>
                                         </div>
-                                        <Link to="/Login" className="btn btn-primary btn-user btn-block">
+                                        <button onClick={recupera} className="btn btn-primary btn-user btn-block">
                                             Cambiar contraseña
-                                        </Link>
+                                        </button>
                                     </form>
                                     
                                     <div className="text-center">
