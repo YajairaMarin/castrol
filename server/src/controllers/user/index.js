@@ -8,6 +8,8 @@ import {
 	updateUser,
 	addCar,
 	addGas,
+	addMoney,
+	getCarById,
 } from "./methods";
 const router = Router();
 
@@ -35,7 +37,7 @@ router.get("/:userId/detail", authGuard, async (req, res, next) => {
 	}
 });
 
-router.post("/create", async (req, res, next) => {
+router.post("/create", authGuard, async (req, res, next) => {
 	try {
 		const newTodo = await createUser(req.body);
 		res.json({
@@ -71,6 +73,15 @@ router.delete("/:userId/delete", authGuard, async (req, res, next) => {
 
 //-----------------------------RUTAS PARA CARROS-------------------------------------
 
+router.get("/:userId/cars/:carId/detail", authGuard, async (req, res, next) => {
+	try {
+		const car = await getCarById(req.params.carId);
+		res.json({ car: car });
+	} catch (error) {
+		next(error);
+	}
+});
+
 router.post("/:userId/cars/newCar", authGuard, async (req, res, next) => {
 	try {
 		await addCar(req.params.userId, req.body);
@@ -81,12 +92,22 @@ router.post("/:userId/cars/newCar", authGuard, async (req, res, next) => {
 	}
 });
 
-router.put("/:userId/cars/:carPlate/gas", authGuard, async (req, res, next) => {
+router.put("/:userId/cars/:carId/gas", authGuard, async (req, res, next) => {
 	try {
-		await addGas(req.params.userId, req.params.carPlate, req.body);
+		await addGas(req.params.userId, req.params.carId, req.body.gas);
 		res.json({
-			message: `Agregado ${req.body} al carro con placas ${req.params.carPlate}`,
+			message: `Agregado ${req.body.gas} al carro`,
 		});
+	} catch (error) {
+		next(error);
+	}
+});
+
+//-------------------------------RUTAS PARA BALANCE------------------------------
+router.put("/:userId/balance", authGuard, async (req, res, next) => {
+	try {
+		addMoney(req.params.userId, req.body.balance);
+		res.json({ message: "Dinero correctamente agregado" });
 	} catch (error) {
 		next(error);
 	}

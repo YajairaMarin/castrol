@@ -69,12 +69,12 @@ function Login() {
 														</label>
 													</div>
 												</div>
-												<button
-													onClick={loguearse}
+												<Link
+													to="/App1"
 													className="btn btn-primary btn-user btn-block"
 												>
 													Ingresar
-												</button>
+												</Link>
 											</form>
 
 											<div className="text-center">

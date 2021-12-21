@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
 import { compare, genSalt, hash } from "bcrypt";
+const mongoose = require("mongoose");
 
 const externalUserSchema = mongoose.Schema({
 	classification: {
@@ -14,10 +14,7 @@ const externalUserSchema = mongoose.Schema({
 		type: String,
 		required: [true, "El apellido es requerido"],
 	},
-	age: {
-		type: Number,
-		required: [true, "La edad es requerida"],
-	},
+
 	email: {
 		type: String,
 		required: [true, "El correo es requerido"],
@@ -27,10 +24,7 @@ const externalUserSchema = mongoose.Schema({
 		type: String,
 		required: [true, "La constraseña es requerida"],
 	},
-	birthDay: {
-		type: Date,
-		required: [true, "La fecha de nacimiento es requerida"],
-	},
+
 	balance: {
 		type: Number,
 		default: 0,
@@ -44,8 +38,6 @@ const externalUserSchema = mongoose.Schema({
 		{
 			plate: {
 				type: String,
-				required: true,
-				unique: true,
 			},
 
 			gas: {

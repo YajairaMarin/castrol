@@ -8,6 +8,7 @@ export const registerUser = async (payload) => {
 		await newTodo.save();
 		return newTodo;
 	} catch (error) {
+		console.log("ESTE ES EL ERROR:: ", error);
 		if (error.code === 11000) throw new ClientError("Usuario no disponible");
 		else throw error;
 	}

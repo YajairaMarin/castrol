@@ -1,11 +1,12 @@
-const express = require("express");
-const mongoose = require("mongoose");
 import { config } from "dotenv";
 import cookieParser from "cookie-parser";
 import compression from "compression";
 import { json, urlencoded } from "body-parser";
 import { connectToMongoDB } from "./db/client";
 import { setUpControllers } from "./controllers";
+import cors from "cors";
+const express = require("express");
+const mongoose = require("mongoose");
 
 const main = async () => {
 	try {
@@ -19,6 +20,7 @@ const main = async () => {
 		app.use(cookieParser());
 		app.use(urlencoded({ extended: false }));
 		app.use(json());
+		app.use(cors());
 
 		app.get("/", (req, res) => {
 			res.json({ message: "ok" });

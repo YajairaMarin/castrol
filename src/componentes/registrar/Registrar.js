@@ -1,18 +1,27 @@
 import { Link } from "react-router-dom";
 import Menu from "../menu/Menu";
 import Footer from "../footer/Footer";
-import Axios from "axios";
+import axios from "axios";
 
-function Registrar() {
+const Registrar = () => {
 	const registrarse = () => {
-		Axios.post("localhost:8080/auth/register", {
-			name: "Robert",
-			lastname: "ramirez",
-			age: 25,
-			email: "robert@hotmail.com",
-			password: "america",
-			birthDay: "1996-05-29",
-		});
+		alert("ESTOY DENTRO DE LA FUNCION");
+		axios
+			.post("http://localhost:8080/auth/register", {
+				name: "Tico",
+				lastname: "ramirez",
+				age: 25,
+				email: "tico@hotmail.com",
+				password: "america",
+				birthDay: "1996-05-29",
+			})
+			.then((res) => {
+				const mensaje = res.data;
+				console.log(mensaje);
+			})
+			.catch((error) => {
+				alert(error.response);
+			});
 	};
 	return (
 		<>
@@ -86,7 +95,9 @@ function Registrar() {
 													</div>
 												</div>
 												<button
-													onClick={registrarse}
+													onClick={() => {
+														registrarse();
+													}}
 													className="btn btn-primary btn-user btn-block"
 												>
 													Registrarse
@@ -114,6 +125,6 @@ function Registrar() {
 			<Footer />
 		</>
 	);
-}
+};
 
 export default Registrar;
