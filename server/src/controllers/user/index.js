@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { authGuard } from "../../guards/auth";
+
 import {
 	createUser,
 	deleteUser,
@@ -13,11 +13,11 @@ import {
 } from "./methods";
 const router = Router();
 
-router.get("/ping", authGuard, async (req, res) => {
+router.get("/ping", async (req, res) => {
 	res.json({ message: "pong", jwt_payload: req.jwt_payload });
 });
 
-router.get("/list", authGuard, async (_req, res, next) => {
+router.get("/list", async (_req, res, next) => {
 	try {
 		const todos = await getAllUsers();
 		res.json(todos);
@@ -28,7 +28,7 @@ router.get("/list", authGuard, async (_req, res, next) => {
 
 //------------------------RUTAS DE USUARIOS------------------------------
 
-router.get("/:userId/detail", authGuard, async (req, res, next) => {
+router.get("/:userId/detail", async (req, res, next) => {
 	try {
 		const detail = await getUserById(req.params.userId);
 		res.json(detail);
@@ -37,7 +37,7 @@ router.get("/:userId/detail", authGuard, async (req, res, next) => {
 	}
 });
 
-router.post("/create", authGuard, async (req, res, next) => {
+router.post("/create", async (req, res, next) => {
 	try {
 		const newTodo = await createUser(req.body);
 		res.json({
@@ -49,7 +49,7 @@ router.post("/create", authGuard, async (req, res, next) => {
 	}
 });
 
-router.put("/:userId/update", authGuard, async (req, res, next) => {
+router.put("/:userId/update", async (req, res, next) => {
 	try {
 		await updateUser(req.params.userId, req.body);
 		const data = await getUserById(req.params.userId);
@@ -62,7 +62,7 @@ router.put("/:userId/update", authGuard, async (req, res, next) => {
 	}
 });
 
-router.delete("/:userId/delete", authGuard, async (req, res, next) => {
+router.delete("/:userId/delete", async (req, res, next) => {
 	try {
 		await deleteUser(req.params.userId);
 		res.json({ message: `Se ha eliminado el usuario ${req.params.userId}` });
@@ -73,7 +73,7 @@ router.delete("/:userId/delete", authGuard, async (req, res, next) => {
 
 //-----------------------------RUTAS PARA CARROS-------------------------------------
 
-router.get("/:userId/cars/:carId/detail", authGuard, async (req, res, next) => {
+router.get("/:userId/cars/:carId/detail", async (req, res, next) => {
 	try {
 		const car = await getCarById(req.params.carId);
 		res.json({ car: car });
@@ -82,7 +82,7 @@ router.get("/:userId/cars/:carId/detail", authGuard, async (req, res, next) => {
 	}
 });
 
-router.post("/:userId/cars/newCar", authGuard, async (req, res, next) => {
+router.post("/:userId/cars/newCar", async (req, res, next) => {
 	try {
 		await addCar(req.params.userId, req.body);
 		const data = await getUserById(req.params.userId);
@@ -92,7 +92,7 @@ router.post("/:userId/cars/newCar", authGuard, async (req, res, next) => {
 	}
 });
 
-router.put("/:userId/cars/:carId/gas", authGuard, async (req, res, next) => {
+router.put("/:userId/cars/:carId/gas", async (req, res, next) => {
 	try {
 		await addGas(req.params.userId, req.params.carId, req.body.gas);
 		res.json({
@@ -104,7 +104,7 @@ router.put("/:userId/cars/:carId/gas", authGuard, async (req, res, next) => {
 });
 
 //-------------------------------RUTAS PARA BALANCE------------------------------
-router.put("/:userId/balance", authGuard, async (req, res, next) => {
+router.put("/:userId/balance", async (req, res, next) => {
 	try {
 		addMoney(req.params.userId, req.body.balance);
 		res.json({ message: "Dinero correctamente agregado" });

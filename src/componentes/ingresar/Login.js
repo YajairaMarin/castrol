@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, Route } from "react-router-dom";
 import Menu from "../menu/Menu";
 import Footer from "../footer/Footer";
 import Axios from "axios";
@@ -7,22 +7,18 @@ import { useState } from "react";
 function Login() {
 	const [user, setUser] = useState("");
 	const [pass, setPass] = useState("");
+	const navigate = useNavigate();
 
-	const loguearse = () => {
-		let codeRes;
-		alert("ESTOY DENTRO DE LA FUNCION");
-
-		Axios.post("http://localhost:8080/auth/login", {
-			email: user,
-			password: pass,
-		})
-			.then((res) => {
-				alert("ESTE ES LA RESPUESTA", res.ok);
-				// codeRes = res.code;
-			})
-			.catch((e) => alert("ESTE ES EL ERROR::  ", e));
-
-		return codeRes;
+	const loguearse = async () => {
+		try {
+			const response = Axios.post("http://localhost:8080/auth/login", {
+				email: user,
+				password: pass,
+			});
+			return await response;
+		} catch (error) {
+			console.log("NO SE PUDO INCIAR SESION");
+		}
 	};
 
 	return (
@@ -43,7 +39,12 @@ function Login() {
 													¡Bienvenido de nuevo!
 												</h1>
 											</div>
-											<form className="user">
+											<form
+												onSubmit={(e) => {
+													e.preventDefault();
+												}}
+												className="user"
+											>
 												<div className="form-group">
 													<input
 														onChange={(e) => {
@@ -79,10 +80,15 @@ function Login() {
 												</div>
 
 												<button
-													onClick={() => {
-														let codigo = loguearse();
-														if (codigo === 200) {
+													onClick={async () => {
+														let res = await loguearse();
+														let codigo = res.statusText;
+														if (codigo === "OK") {
+															navigate("/App", {
+																state: res.data.usuario._id,
+															});
 														} else {
+															console.log("NO SE PUDO INCIAR SESION");
 														}
 													}}
 													className="btn btn-primary btn-user btn-block"

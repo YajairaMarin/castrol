@@ -9,10 +9,13 @@ const router = Router();
 
 router.post("/login", async (req, res, next) => {
 	try {
-		const { refreshToken, accessToken } = await loginUser(req.body);
+		const {
+			tokens: { refreshToken, accessToken },
+			usuario,
+		} = await loginUser(req.body);
 		res
 			.cookie("refreshToken", refreshToken, { httpOnly: true })
-			.json({ message: "El usuario ha inicado sesión", accessToken });
+			.json({ message: "El usuario ha inicado sesión", accessToken, usuario });
 	} catch (error) {
 		next(error);
 	}

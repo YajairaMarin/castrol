@@ -40,7 +40,11 @@ export const loginUser = async (payload) => {
 
 	if (!passwordMatch) throw new ClientError("Contraseña invalida.");
 
-	return await getTokenPair(user);
+	let res = {
+		tokens: await getTokenPair(user),
+		usuario: user,
+	};
+	return res;
 };
 
 export const refreshAccessToken = async (refreshToken) => {
